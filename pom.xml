@@ -162,7 +162,7 @@
 <!--							<target>-->
 <!--								<mkdir dir="${basedir}/target/json-mock-server" />-->
 <!--								<copy todir="${basedir}/target/json-mock-server">-->
-<!--									<fileset dir="${basedir}/json-mock-server" includes="mock-data.json" />-->
+<!--									<fileset dir="${basedir}/json-mock-server" includes="db.json" />-->
 <!--								</copy>-->
 <!--								<copy todir="${basedir}/target">-->
 <!--									<fileset dir="${basedir}/docker" />-->

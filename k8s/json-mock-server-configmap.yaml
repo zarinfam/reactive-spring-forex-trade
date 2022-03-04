@@ -1,0 +1,87 @@
+apiVersion: v1
+data:
+  db.json: "{\n    \"rates\": [\n\t\t{\t\n\t\t\t\"rates\": {\n\t          \"CAD\":
+    1.7611110473,\n\t\t\t  \"USD\": 1.3,\n\t\t\t  \"EUR\": 1.2,\t\n\t          \"HKD\":
+    10.7991683227,\n\t          \"ISK\": 175.6401272788,\n\t          \"PHP\": 67.8781891491,\n\t
+    \         \"DKK\": 8.5420376093,\n\t          \"HUF\": 415.1838535145,\n\t          \"CZK\":
+    30.0908641862,\n\t          \"GBP\": 1,\n\t          \"RON\": 5.6000367592,\n\t
+    \         \"SEK\": 11.6466979886,\n\t          \"IDR\": 19934.419261829,\n\t          \"INR\":
+    102.8989236442,\n\t          \"BRL\": 7.6555661494,\n\t          \"RUB\": 104.1545954763,\n\t
+    \         \"HRK\": 8.7107853836,\n\t          \"JPY\": 147.9903047569\n\t        },\n\t\t\t\"id\":
+    \"GBP\",\n\t        \"base\": \"GBP\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\t\n\t\t\t\"rates\":
+    {\n\t          \"JPY\": 77.79,\n\t\t\t  \"CAD\": 0.86544,\n\t\t\t  \"CHF\": 0.64557\n\t\t\t},\n\t\t\t\"id\":
+    \"USD\",\n\t        \"base\": \"USD\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"CAD\": 0.9271,\n\t\t\t\t\"CHF\": 0.92396,\n\t\t\t\t\"JPY\": 83.34,\n\t\t\t\t\"NZD\":
+    1.07102,\n\t\t\t\t\"USD\": 0.74848\n\t\t\t},\n\t\t\t\"id\": \"AUD\",\n\t\t\t\"base\":
+    \"AUD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"CHF\":
+    0.74577,\n\t\t\t\t\"JPY\": 89.87\n\t\t\t},\n\t\t\t\"id\": \"CAD\",\n\t\t\t\"base\":
+    \"CAD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"JPY\":
+    0.0083\n\t\t\t},\n\t\t\t\"id\": \"CHF\",\n\t\t\t\"base\": \"CHF\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"AUD\": 1.58217,\n\t\t\t\t\"CAD\":
+    1.46719,\n\t\t\t\t\"CHF\": 1.09452,\n\t\t\t\t\"GBP\": 0.85914,\n\t\t\t\t\"JPY\":
+    131.89,\n\t\t\t\t\"NZD\": 1.69455,\n\t\t\t\t\"USD\": 1.18451\n\t\t\t},\n\t\t\t\"id\":
+    \"EUR\",\n\t\t\t\"base\": \"EUR\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"CAD\": 0.86544,\n\t\t\t\t\"CHF\": 0.64557,\n\t\t\t\t\"JPY\": 77.79,\n\t\t\t\t\"USD\":
+    0.6987\n\t\t\t},\n\t\t\t\"id\": \"NZD\",\n\t\t\t\"base\": \"NZD\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\t\n\t\t\t\"rates\": {\n\t          \"CAD\": 1.70728\n\t\t\t},\n\t\t\t\"id\":
+    \"GBP-CAD\",\n\t        \"base\": \"GBP\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"CHF\": 1.27376\n\t\t\t},\n\t\t\t\"id\": \"GBP-CHF\",\n\t\t\t\"base\":
+    \"GBP\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t
+    \         \"USD\": 1.37835\n\t\t\t},\n\t\t\t\"id\": \"GBP-USD\",\n\t        \"base\":
+    \"GBP\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\t\n\t\t\t\"rates\":
+    {\n\t          \"JPY\": 153.47\n\t\t\t},\n\t\t\t\"id\": \"GBP-JPY\",\n\t        \"base\":
+    \"GBP\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"NZD\": 1.97184\n\t\t\t},\n\t\t\t\"id\": \"GBP-NZD\",\n\t\t\t\"base\":
+    \"GBP\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"AUD\":
+    1.84088\n\t\t\t},\n\t\t\t\"id\": \"GBP-AUD\",\n\t\t\t\"base\": \"GBP\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\t\n\t\t\t\"rates\": {\n\t          \"USD\": 1.18451\n\t\t\t},\n\t\t\t\"id\":
+    \"EUR-USD\",\n\t        \"base\": \"EUR\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\t\n\t\t{\t\n\t\t\t\"rates\":
+    {\n\t          \"GBP\": 0.85914\n\t\t\t},\n\t\t\t\"id\": \"EUR-GBP\",\n\t        \"base\":
+    \"EUR\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"AUD\": 1.58217\n\t\t\t},\n\t\t\t\"id\": \"EUR-AUD\",\n\t\t\t\"base\":
+    \"EUR\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"CAD\":
+    1.46719\n\t\t\t},\n\t\t\t\"id\": \"EUR-CAD\",\n\t\t\t\"base\": \"EUR\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"CHF\": 1.09452\n\t\t\t},\n\t\t\t\"id\":
+    \"EUR-CHF\",\n\t\t\t\"base\": \"EUR\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"JPY\": 131.89\n\t\t\t},\n\t\t\t\"id\": \"EUR-JPY\",\n\t\t\t\"base\":
+    \"EUR\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"NZD\":
+    1.69455\n\t\t\t},\n\t\t\t\"id\": \"EUR-NZD\",\n\t\t\t\"base\": \"EUR\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t          \"GBP\": 0.7\n\t
+    \       },\n\t\t\t\"id\": \"USD-GBP\",\n\t        \"base\": \"USD\",\n\t        \"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\t\n\t\t\t\"rates\": {\n\t          \"JPY\": 77.79\n\t\t\t},\n\t\t\t\"id\":
+    \"USD-JPY\",\n\t        \"base\": \"USD\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\t\t\n\t\t{\t\n\t\t\t\"rates\":
+    {\n\t          \"USD\": 0.8\n\t        },\n\t\t\t\"id\": \"CAD-USD\",\n\t        \"base\":
+    \"CAD\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\t\n\t\t\t\"rates\":
+    {\n\t          \"CHF\": 0.74\n\t        },\n\t\t\t\"id\": \"CAD-CHF\",\n\t        \"base\":
+    \"CAD\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"JPY\": 89.87\n\t\t\t},\n\t\t\t\"id\": \"CAD-JPY\",\n\t\t\t\"base\":
+    \"CAD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\t\n\t\t\t\"rates\": {\n\t
+    \         \"USD\": 2.1\n\t        },\n\t\t\t\"id\": \"PHP-USD\",\n\t        \"base\":
+    \"PHP\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\t\n\t\t\t\"rates\":
+    {\n\t          \"USD\": 0.3\n\t        },\n\t\t\t\"id\": \"HKD-USD\",\n\t        \"base\":
+    \"HKD\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\t\t\t\t\t\t\n\t\t{\t\n\t\t\t\"rates\":
+    {\n\t          \"HKD\": 10.7\n\t        },\n\t\t\t\"id\": \"GBP-HKD\",\n\t        \"base\":
+    \"GBP\",\n\t        \"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"CAD\": 0.9271\n\t\t\t},\n\t\t\t\"id\": \"AUD-CAD\",\n\t\t\t\"base\":
+    \"AUD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"CHF\":
+    0.92396\n\t\t\t},\n\t\t\t\"id\": \"AUD-CHF\",\n\t\t\t\"base\": \"AUD\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"JPY\": 83.34\n\t\t\t},\n\t\t\t\"id\":
+    \"AUD-JPY\",\n\t\t\t\"base\": \"AUD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"NZD\": 1.07102\n\t\t\t},\n\t\t\t\"id\": \"AUD-NZD\",\n\t\t\t\"base\":
+    \"AUD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"USD\":
+    0.74848\n\t\t\t},\n\t\t\t\"id\": \"AUD-USD\",\n\t\t\t\"base\": \"AUD\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"JPY\": 0.0083\n\t\t\t},\n\t\t\t\"id\":
+    \"CHF-JPY\",\n\t\t\t\"base\": \"CHF\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"CAD\": 0.86544\n\t\t\t},\n\t\t\t\"id\": \"NZD-CAD\",\n\t\t\t\"base\":
+    \"NZD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"CHF\":
+    0.64557\n\t\t\t},\n\t\t\t\"id\": \"NZD-CHF\",\n\t\t\t\"base\": \"NZD\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"JPY\": 77.79\n\t\t\t},\n\t\t\t\"id\":
+    \"NZD-JPY\",\n\t\t\t\"base\": \"NZD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\":
+    {\n\t\t\t\t\"USD\": 0.6987\n\t\t\t},\n\t\t\t\"id\": \"NZD-USD\",\n\t\t\t\"base\":
+    \"NZD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"CAD\":
+    0.86544\n\t\t\t},\n\t\t\t\"id\": \"USD-CAD\",\n\t\t\t\"base\": \"NZD\",\n\t\t\t\"date\":
+    \"2020-01-20\"\n\t\t},\n\t\t{\n\t\t\t\"rates\": {\n\t\t\t\t\"CHF\": 0.64557\n\t\t\t},\n\t\t\t\"id\":
+    \"USD-CHF\",\n\t\t\t\"base\": \"USD\",\n\t\t\t\"date\": \"2020-01-20\"\n\t\t}\n\t]\n}"
+kind: ConfigMap
+metadata:
+  name: json-mock-server-config

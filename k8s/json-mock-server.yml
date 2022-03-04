@@ -1,0 +1,48 @@
+apiVersion: apps/v1           # API version
+kind: Deployment              # Type of kubernetes resource
+metadata:
+  name: json-mock-server    # Name of the kubernetes resource
+  labels:                     # Labels that will be applied to this resource
+    app: json-mock-server
+spec:
+  replicas: 1                 # No. of replicas/pods to run in this deployment
+  selector:
+    matchLabels:              # The deployment applies to any pods mayching the specified labels
+      app: json-mock-server
+  template:                   # Template for creating the pods in this deployment
+    metadata:
+      labels:                 # Labels that will be applied to each Pod in this deployment
+        app: json-mock-server
+    spec:                     # Spec for the containers that will be run in the Pods
+      containers:
+      - name: json-mock-server
+        image: clue/json-server
+        volumeMounts:
+          - name: mock-data
+            mountPath: /data/db.json
+            subPath: db.json
+        ports:
+          - name: http
+            containerPort: 80 # The port that the container exposes
+      volumes:
+        - name: mock-data
+          configMap:
+            name: json-mock-server-config
+            items:
+              - key: db.json
+                path: db.json
+---
+apiVersion: v1                # API version
+kind: Service                 # Type of the kubernetes resource
+metadata:                     
+  name: json-mock-server    # Name of the kubernetes resource
+  labels:                     # Labels that will be applied to this resource
+    app: json-mock-server
+spec:                         
+  type: ClusterIP                # Exposes the service by opening a port on each node
+  selector:
+    app: json-mock-server   # The service exposes Pods with label `app=polling-app-server`
+  ports:                      # Forward incoming connections on port 8080 to the target port 8080
+  - name: http
+    port: 80
+    targetPort: 80

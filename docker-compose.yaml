@@ -17,4 +17,4 @@ services:
     ports:
       - 3000:80
     volumes:
-      - ./mock-server/mock-data.json:/data/db.json
+      - ./mock-server/db.json:/data/db.json

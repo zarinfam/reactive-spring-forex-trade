@@ -60,7 +60,7 @@ You can follow the commands below:
 
 **Start up the mock forex rate API:**
 
-`json-server ./mock-server/mock-data.json` 
+`json-server ./mock-server/db.json` 
 
 or
 
