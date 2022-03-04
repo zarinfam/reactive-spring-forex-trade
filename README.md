@@ -4,10 +4,18 @@
 ## Articles
 
 - [Spring — A Faster Way To Build Production-Ready API in a Well- Defined Structure](https://medium.com/dev-genius/spring-a-faster-way-to-build-production-ready-api-in-a-well-defined-structure-5b1730fa81dd)
+- [Uplift Your Java Spring Boot To WebFlux Non-Blocking Application](https://blog.devgenius.io/uplift-your-java-spring-boot-to-webflux-non-blocking-application-7b207999e669)
 - [Java Spring — The Best Practice of Modern Software Quality Assurance](https://blog.devgenius.io/java-spring-the-best-practice-of-modern-software-quality-assurance-e5aa66466627)
+- - [Start Behavior-Driven Development (BDD) for Java SpringBoot REST API Using Cucumber](https://blog.devgenius.io/start-behavior-driven-development-bdd-for-java-springboot-rest-api-using-cucumber-f6b1754d93b1)
 - [DevOps— Software Quality Control Using Jenkins CI/CD Pipeline](https://blog.devgenius.io/devops-software-quality-control-using-jenkins-ci-cd-pipeline-373ade18d738)
 - [CircleCI — The Modern Cloud-Based Platform of Pipeline Automation](https://blog.devgenius.io/circleci-the-modern-cloud-based-platform-of-pipeline-automation-a5b293c9e171)
 - [How To Fast Track Your Apps & Website Development Using React JS + Grommet](https://blog.devgenius.io/how-to-fast-track-your-apps-website-development-using-react-js-grommet-b54b1353a3e1)
+- [How to Build Performance Tests To Validate Your APIs Using Gatling](https://medium.com/@gavinklfong/how-to-build-performance-tests-to-validate-your-apis-using-gatling-b91adaf08222)
+- [Is Spring WebFlux a Myth?](https://blog.devgenius.io/is-spring-webflux-a-myth-4526c2f92413)
+- [How To Build A Marvelous Tech Stack Of Elasticsearch](https://blog.devgenius.io/how-to-build-a-marvelous-tech-stack-of-elasticsearch-798bae89b13c)
+- [How to Build High Performance API Client Using Reactive Feign](https://blog.devgenius.io/how-to-build-high-performance-api-client-using-reactive-feign-bae4b5053d12)
+- [How to Verify API Interfaces Using Automated Contract Test?](https://blog.devgenius.io/how-to-verify-api-interfaces-using-automated-contract-test-7002cce5a306)
+- [Contract Test — Spring Cloud Contract vs PACT](https://medium.com/dev-genius/contract-test-spring-cloud-contract-vs-pact-420450f20429)
 
 ## Introduction
 
@@ -35,8 +43,13 @@ Maven pom.xml was generated on Spring Initializr with the following dependent li
 
 To simulate API provider for Forex Rate, the workspace comes with a json data for **json-server** so that this application can consume the API for forex rate retrieval.
 
-You will need to install json-server on your environment
+You will need to install json-server on your environment:
+
 `npm install -g json-server`
+
+or 
+
+`./mock-server/docker-compose.sh up -d`
 
 
 ## Build & Run
@@ -46,7 +59,12 @@ This is Maven project, you can clone this repository to your local machine and t
 You can follow the commands below:
 
 **Start up the mock forex rate API:**
-`json-server ./mock-server/mock-data.json`
+
+`json-server ./mock-server/mock-data.json` 
+
+or
+
+`./mock-server/docker-compose.sh up -d`
 
 **Build:**
 `mvn install`
@@ -54,12 +72,23 @@ You can follow the commands below:
 **Run:**
 `mvn spring-boot:run`
 
+## Package jar file and Build docker image
+**Package jar file:**
+`mvn package -DskipTests`
+
+**Build docker image:**
+` docker build -t zarinfam/reactive-spring-forex-trade .`
+
+
 ## Docker Image
 
 Alternatively, you can run this application using the published docker image.
 
 `docker run --rm -p 8080:8080 whalebig27/reactive-spring-forex-trade`
 	
+## Development
+
+Run `docker-compose up` to run json-server and then run or debug code inside the ide
 
 ## Use Case
 

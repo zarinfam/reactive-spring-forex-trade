@@ -1,20 +1,34 @@
-FROM adoptopenjdk/openjdk11:ubuntu
-MAINTAINER gavinklfong@gmail.com
+#### Stage 1: Build the application
+# Use maven to compile the java application.
+FROM maven:3-jdk-11-slim AS build
 
-# install Node JS and json mock server
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
-    && apt-get install -y nodejs \
-    && npm install -g json-server
-
-COPY mock-server/mock-data.json /app/mock-data.json
-
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} /app/app.jar
-EXPOSE 8080
-
+# Set the current working directory inside the image
 WORKDIR /app
 
-COPY docker-resources/entrypoint.sh /app/entrypoint.sh
+# Copy the pom.xml file
+COPY pom.xml .
 
-CMD ["/app/entrypoint.sh"]
+# Build all the dependencies in preparation to go offline.
+# This is a separate step so the dependencies will be cached unless
+# the pom.xml file has changed.
+RUN mvn dependency:go-offline -B
+
+# Copy the project source
+COPY src src
+
+# Package the application
+RUN mvn package -DskipTests
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
+
+#### Stage 2: A minimal docker image with command to run the app
+FROM openjdk:11-jre-slim
+
+ARG DEPENDENCY=/app/target/dependency
+
+# Copy project dependencies from the build stage
+COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
+
+ENTRYPOINT ["java","-cp","app:app/lib/*","space.gavinklfong.forex.ForexApplication"]
 
