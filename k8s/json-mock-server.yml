@@ -41,8 +41,8 @@ metadata:
 spec:                         
   type: ClusterIP                # Exposes the service by opening a port on each node
   selector:
-    app: json-mock-server   # The service exposes Pods with label `app=polling-app-server`
-  ports:                      # Forward incoming connections on port 8080 to the target port 8080
+    app: json-mock-server   # The service exposes Pods with label `app=json-mock-server`
+  ports:                      # Forward incoming connections on port 80 to the target port 80
   - name: http
     port: 80
     targetPort: 80

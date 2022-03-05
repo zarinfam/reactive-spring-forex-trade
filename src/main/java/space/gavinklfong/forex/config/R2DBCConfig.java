@@ -8,23 +8,23 @@ import org.springframework.r2dbc.connection.init.CompositeDatabasePopulator;
 import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer;
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
 
-import io.r2dbc.h2.H2ConnectionConfiguration;
-import io.r2dbc.h2.H2ConnectionFactory;
 import io.r2dbc.spi.ConnectionFactory;
 
 @EnableR2dbcRepositories
 @Configuration
 public class R2DBCConfig {
 
-    @Bean
-    public H2ConnectionFactory connectionFactory() {
-        return new H2ConnectionFactory(
-            H2ConnectionConfiguration.builder()
-              .url("mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE")
-              .username("sa")
-              .build()
-        );
-    }
+//    @Bean
+//    public H2ConnectionFactory connectionFactory() {
+//        return new H2ConnectionFactory(
+//            H2ConnectionConfiguration.builder()
+//              .url("mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE")
+//              .username("sa")
+//              .build()
+//        );
+//    }
+
+
 
     @Bean
     public ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
@@ -33,7 +33,7 @@ public class R2DBCConfig {
         initializer.setConnectionFactory(connectionFactory);
 
         CompositeDatabasePopulator populator = new CompositeDatabasePopulator();
-        populator.addPopulators(new ResourceDatabasePopulator(new ClassPathResource("schema.sql")));
+        populator.addPopulators(new ResourceDatabasePopulator(new ClassPathResource("schema_mysql.sql")));
         populator.addPopulators(new ResourceDatabasePopulator(new ClassPathResource("data.sql")));
         initializer.setDatabasePopulator(populator);
 

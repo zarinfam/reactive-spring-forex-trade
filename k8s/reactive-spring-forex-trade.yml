@@ -14,6 +14,10 @@ spec:
       labels:                 # Labels that will be applied to each Pod in this deployment
         app: forex-trade-api
     spec:                     # Spec for the containers that will be run in the Pods
+      initContainers:
+      - name: mysql-db-ready
+        image: busybox:1.31
+        command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']
       containers:
       - name: forex-trade-api
         image: zarinfam/reactive-spring-forex-trade
@@ -21,6 +25,21 @@ spec:
           - name: http
             containerPort: 8080 # The port that the container exposes
         env:                  # Environment variables supplied to the Pod
+        - name: SPRING_R2DBC_USERNAME # Name of the environment variable
+          valueFrom:          # Get the value of environment variable from kubernetes secrets
+            secretKeyRef:
+              name: mysql-user-pass
+              key: username
+        - name: SPRING_R2DBC_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-user-pass
+              key: password
+        - name: SPRING_R2DBC_URL
+          valueFrom:
+            secretKeyRef:
+              name: mysql-db-url
+              key: url
         - name: APP_FOREX-RATE-API-URL
           valueFrom:
             secretKeyRef:
@@ -36,7 +55,7 @@ metadata:
 spec:                         
   type: ClusterIP                # Exposes the service by opening a port on each node
   selector:
-    app: forex-trade-api   # The service exposes Pods with label `app=polling-app-server`
+    app: forex-trade-api   # The service exposes Pods with label `app=forex-trade-api`
   ports:                      # Forward incoming connections on port 8080 to the target port 8080
   - name: http
     port: 8080

@@ -7,9 +7,21 @@ secretGenerator:
 - literals:
   - url=http://json-mock-server:80
   name: rate-api-url
+- literals:
+    - password=R00t
+  name: mysql-root-pass
+- literals:
+    - username=forex
+    - password=p@SSw0rd
+  name: mysql-user-pass
+- literals:
+    - database=testdb
+    - url=r2dbc:pool:mysql://mysql:3306/testdb?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+  name: mysql-db-url
 resources:
-- reactive-spring-forex-trade.yml
+- mysql.yml
 - json-mock-server.yml
+- reactive-spring-forex-trade.yml
 #- json-mock-server-configmap.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
