@@ -1,8 +1,8 @@
 # The secrets file should not be checked into Git. It's published only for demonstration purpose.
-#configMapGenerator:
-#  - files:
-#      - ../mock-server/db.json
-#    name: json-mock-server-config
+configMapGenerator:
+  - name: json-mock-server-config
+    files:
+    - mock-server/db.json
 secretGenerator:
 - literals:
   - url=http://json-mock-server:80
@@ -10,6 +10,6 @@ secretGenerator:
 resources:
 - reactive-spring-forex-trade.yml
 - json-mock-server.yml
-- json-mock-server-configmap.yaml
+#- json-mock-server-configmap.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
