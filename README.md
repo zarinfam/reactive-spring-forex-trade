@@ -6,7 +6,7 @@
 - [Spring — A Faster Way To Build Production-Ready API in a Well- Defined Structure](https://medium.com/dev-genius/spring-a-faster-way-to-build-production-ready-api-in-a-well-defined-structure-5b1730fa81dd)
 - [Uplift Your Java Spring Boot To WebFlux Non-Blocking Application](https://blog.devgenius.io/uplift-your-java-spring-boot-to-webflux-non-blocking-application-7b207999e669)
 - [Java Spring — The Best Practice of Modern Software Quality Assurance](https://blog.devgenius.io/java-spring-the-best-practice-of-modern-software-quality-assurance-e5aa66466627)
-- - [Start Behavior-Driven Development (BDD) for Java SpringBoot REST API Using Cucumber](https://blog.devgenius.io/start-behavior-driven-development-bdd-for-java-springboot-rest-api-using-cucumber-f6b1754d93b1)
+- [Start Behavior-Driven Development (BDD) for Java SpringBoot REST API Using Cucumber](https://blog.devgenius.io/start-behavior-driven-development-bdd-for-java-springboot-rest-api-using-cucumber-f6b1754d93b1)
 - [DevOps— Software Quality Control Using Jenkins CI/CD Pipeline](https://blog.devgenius.io/devops-software-quality-control-using-jenkins-ci-cd-pipeline-373ade18d738)
 - [CircleCI — The Modern Cloud-Based Platform of Pipeline Automation](https://blog.devgenius.io/circleci-the-modern-cloud-based-platform-of-pipeline-automation-a5b293c9e171)
 - [How To Fast Track Your Apps & Website Development Using React JS + Grommet](https://blog.devgenius.io/how-to-fast-track-your-apps-website-development-using-react-js-grommet-b54b1353a3e1)

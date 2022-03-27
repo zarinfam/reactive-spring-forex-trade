@@ -1,16 +1,16 @@
 version: '3'
 services:
 
-#  reactive-spring-forex-trade:
-#    build:
-#      dockerfile: Dockerfile
-#      context: .
-#    ports:
-#      - 8080:8080
-#    environment:
-#      - APP_FOREX-RATE-API-URL=http://json-mock-server:80
-#    depends_on:
-#      - json-mock-server
+  reactive-spring-forex-trade:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 8080:8080
+    environment:
+      - APP_FOREX-RATE-API-URL=http://json-mock-server:80
+    depends_on:
+      - json-mock-server
 
   json-mock-server:
     image: clue/json-server
@@ -18,3 +18,19 @@ services:
       - 3000:80
     volumes:
       - ./k8s/mock-server/db.json:/data/db.json
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    #   command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecret
+      MYSQL_USER: forex
+      MYSQL_PASSWORD: p@SSw0rd
+      MYSQL_DATABASE: testdb
+    volumes:
+      - forex-db:/var/lib/mysql
+
+volumes:
+  forex-db:
